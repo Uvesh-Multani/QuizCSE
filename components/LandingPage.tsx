@@ -63,8 +63,10 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <div className="bg-white bg-opacity-20 p-6 rounded-lg text-center">
-      {icon}
+    <div className="bg-white bg-opacity-20 p-6 rounded-lg text-center flex flex-col items-center">
+      <div className="flex items-center justify-center mb-4">
+        {icon}
+      </div>
       <h2 className="text-xl font-semibold mb-2">{title}</h2>
       <p>{description}</p>
     </div>
