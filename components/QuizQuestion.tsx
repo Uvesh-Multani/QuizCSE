@@ -47,7 +47,7 @@ export default function QuizQuestion({ question, questionNumber, totalQuestions,
           <p className="text-xl mb-4">{questionText.trim()}</p>
           <Highlight theme={themes.nightOwl} code={codeSnippet.trim()} language="python">
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
-              <pre className={`${className} p-4 rounded-md mb-4`} style={style}>
+              <pre className={`${className} p-4 rounded-md mb-4 max-w-full overflow-x-auto`} style={style}>
                 {tokens.map((line, i) => (
                   <div key={i} {...getLineProps({ line, key: i })}>
                     <span className="mr-4 opacity-50">{i + 1}</span>
@@ -67,23 +67,23 @@ export default function QuizQuestion({ question, questionNumber, totalQuestions,
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500 p-4">
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="bg-white p-8 rounded-lg shadow-2xl w-full max-w-2xl"
+        className="bg-white p-6 rounded-lg shadow-2xl w-full max-w-2xl"
       >
         <h2 className="text-2xl font-bold mb-4">Question {questionNumber}</h2>
         <Progress value={(questionNumber / totalQuestions) * 100} className="mb-4" />
         {renderQuestion()}
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           {question.options.map((option, index) => (
             <Button
               key={index}
               variant={selectedAnswer === option ? "default" : "outline"}
               onClick={() => setSelectedAnswer(option)}
-              className="py-8 text-lg"
+              className="py-4 text-lg w-full" // Full width for buttons
             >
               {option}
             </Button>
