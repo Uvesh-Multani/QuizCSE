@@ -8,7 +8,7 @@ interface LandingPageProps {
 
 export default function LandingPage({ onStart }: LandingPageProps) {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 text-white p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-cyan-600 to-blue-500 text-white p-4">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
