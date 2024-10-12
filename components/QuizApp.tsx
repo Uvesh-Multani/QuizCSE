@@ -181,7 +181,7 @@ export default function QuizApp() {
 
   if (!quizStarted) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-4">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400  to-blue-500 p-4">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
