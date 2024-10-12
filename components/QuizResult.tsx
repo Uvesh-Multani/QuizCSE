@@ -1,13 +1,14 @@
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 interface QuizResultProps {
-  score: number
-  totalQuestions: number
+  userName: string; // Include userName in the props
+  score: number;
+  totalQuestions: number;
 }
 
-export default function QuizResult({ score, totalQuestions }: QuizResultProps) {
-  const percentage = ((score / totalQuestions) * 100).toFixed(2)
+export default function QuizResult({ userName, score, totalQuestions }: QuizResultProps) { // Add userName here
+  const percentage = ((score / totalQuestions) * 100).toFixed(2);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500">
@@ -18,7 +19,7 @@ export default function QuizResult({ score, totalQuestions }: QuizResultProps) {
         className="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md text-center"
       >
         <h2 className="text-3xl font-bold mb-4">Quiz Complete!</h2>
-        <p className="text-xl mb-2">Great job! You scored:</p>
+        <p className="text-xl mb-2">Great job, {userName}! You scored:</p> {/* Include userName here */}
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -33,5 +34,5 @@ export default function QuizResult({ score, totalQuestions }: QuizResultProps) {
         <Button onClick={() => window.location.reload()}>Try Again</Button>
       </motion.div>
     </div>
-  )
+  );
 }
