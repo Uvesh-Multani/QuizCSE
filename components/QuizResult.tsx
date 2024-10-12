@@ -7,11 +7,11 @@ interface QuizResultProps {
   totalQuestions: number;
 }
 
-export default function QuizResult({ userName, score, totalQuestions }: QuizResultProps) { // Add userName here
+export default function QuizResult({ userName, score, totalQuestions }: QuizResultProps) {
   const percentage = ((score / totalQuestions) * 100).toFixed(2);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 p-4">
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
